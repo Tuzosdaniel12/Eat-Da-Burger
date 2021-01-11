@@ -2,22 +2,18 @@ const connection = require("./connection.js")
 
 
 const orm = {
-    all: () =>{
-        return connection.query("SELECT * FROM burgers");
+    all: tableName =>{
+        return connection.query("SELECT * FROM ??",tableName);
     },
-    add: (addObject) =>{
-         return connection.query(`INSERT INTO burgers SET?`,addObject);
+    add: addObject =>{
+         return connection.query(`INSERT INTO ?? SET ?`,addObject);
     },
     removeAll: (removeObject)=>{
-        return connection.query(
-            `DELETE FROM burgers
-            WHERE ?;`, removeObject)
+        return connection.query(`DELETE FROM ?? WHERE ?;`,removeObject)
     },
     updateAll(updatedObject){
-        return connection.query(
-            `UPDATE burgers SET ? WHERE ?;`,updatedObject)
+        return connection.query(`UPDATE ?? SET ? WHERE ?;`,updatedObject)
     }
-    
 
 }
 
