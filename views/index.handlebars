@@ -14,9 +14,9 @@
               <div class="col-sm p-2">
                   <h3>Eat Now</h3>
                 <ul class="list-group">
-                    {{#each burgers}}
+                    {{#each burger}}
                         {{#unless devoured}}
-                            {{> listOfBurgers devoured=true}}
+                            {{> burgers/burger-block devoured=true}}
                         {{/unless}}
                     {{/each}}
                 </ul>
@@ -25,9 +25,9 @@
               <div class="col-sm p-2">
                   <h3>Devoured</h3>
                 <ul class="list-group">
-                    {{#each burgers}}
+                    {{#each burger}}
                         {{#if devoured}}
-                            {{> listOfBurgers devoured=false}}
+                            {{> burgers/burger-block devoured=false}}
                         {{/if}}
                     {{/each}} 
                 </ul>

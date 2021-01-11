@@ -8,9 +8,9 @@ const burgers = require("../models/burgers.js")
 
 //html routes
 router.get('/', async (req,res)=>{
-    burgersRes = await burgers.all();
+    burgersRes = await burgers.all("burgers");
     console.log(burgersRes)
-    res.render("index")
+    res.render("index",{burger:burgersRes})
 })
 
 //api routes

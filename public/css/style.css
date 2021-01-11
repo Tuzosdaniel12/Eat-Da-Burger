@@ -12,8 +12,20 @@ body{
 }
 
 .form{
-    width: 50vw;
+    width: 90vw;
     margin: 0 auto;
     color:gray;
     -webkit-text-stroke: .5px white;
 }
+
+@media (min-width: 576px) and (max-width: 800px) {
+    .form{
+        width: 50vw;
+    }
+  }
+
+  @media (min-width: 801px){
+    .form{
+        width: 33vw;
+    }
+  }

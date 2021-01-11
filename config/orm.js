@@ -8,11 +8,11 @@ const orm = {
     add: addObject =>{
          return connection.query(`INSERT INTO ?? SET ?`,addObject);
     },
-    removeAll: (removeObject)=>{
-        return connection.query(`DELETE FROM ?? WHERE ?;`,removeObject)
+    delete: removed=>{
+        return connection.query(`DELETE FROM ?? WHERE ?;`,removed)
     },
-    updateAll(updatedObject){
-        return connection.query(`UPDATE ?? SET ? WHERE ?;`,updatedObject)
+    update: updated=>{
+        return connection.query(`UPDATE ?? SET ? WHERE ?;`,updated)
     }
 
 }
