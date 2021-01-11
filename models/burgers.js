@@ -12,7 +12,7 @@ const burgers = {
     },
     update(devoured, id){
         console.log(devoured, id)
-        return orm.update(["burgers",id])
+        return orm.update(["burgers", devoured, id])
     }   
 }
 
