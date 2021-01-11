@@ -1,17 +1,18 @@
 const orm = require("../config/orm.js")
 
 const burgers = {
-    async read () {
-        return await orm.read("burgers")
+    read () {
+        return orm.read("burgers")
     },
-    async create (addObject){
-        return await orm.create(["burgers", addObject])
+    create (addObject){
+        return orm.create(["burgers", addObject])
     },
-    async delete (removeObject){
-        return await orm.delete(["burgers", removeObject])
+    delete (removeObject){
+        return orm.delete(["burgers", removeObject])
     },
-    async update (updateObject){
-        return await orm.update(["burgers", updateObject])
+    update(devoured, id){
+        console.log(devoured, id)
+        return orm.update(["burgers",id])
     }   
 }
 
