@@ -1,33 +1,37 @@
 <div class="container">
         <header class="row justify-content-md-center position-relative">
-            <img src="public/images/burger.jfif"  class="burger-img"alt="burger">
-                    
+            <img src="images/burger.jfif"  class="burger-img"alt="burger">
+
             <h1 class="text-center ">EAT THE BURGER!</h1>
         </header>
 
-        <form class="input-group">
-            <textarea type="text" class="form-control" placeholder="Burger" aria-label="Recipient's Burger">
+        <form class="input-group form">
+            <textarea type="text" class="form-control" placeholder="Burger" aria-label="Recipient's Burger" id="add-burger"></textarea>
         </form>
 
-        <div class="container p-2">
+        <div class="container p-2 text-center">
             <div class="row">
               <div class="col-sm p-2">
+                  <h3>Eat Now</h3>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Cras justo odio
-                      <span class="btn btn-danger badge  rounded-pill" id="devour">DEVOUR</span>
-                    </li>
-                  </ul>
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> listOfBurgers devoured=true}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
               </div>
 
               <div class="col-sm p-2">
+                  <h3>Devoured</h3>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Cras justo odio
-                      <span class="btn btn-danger badge  rounded-pill" id="devour-again">DEVOUR AGAIN</span>
-                    </li>
-                  </ul>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            {{> listOfBurgers devoured=false}}
+                        {{/if}}
+                    {{/each}} 
+                </ul>
               </div>
             </div>
           </div>
-    </div>
+</div>
