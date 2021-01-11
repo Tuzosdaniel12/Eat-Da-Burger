@@ -1,8 +1,10 @@
 body{
     background-color: black;
     color: white;
-    
+    font-family: 'Hanalei Fill', cursive;
+    -webkit-text-stroke: .5px red;
 }
+
 .burger-img{
     width: 33vw;
     height: auto;
