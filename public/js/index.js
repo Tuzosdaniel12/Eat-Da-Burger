@@ -8,7 +8,9 @@ const addBurger = async (e) =>{
     const burger = {
         burger_name : $("#add-burger").val()
     }
-    await postBurger(burger).catch((err)=>{console.error(err)})
+    const res = await postBurger(burger).catch((err)=>{console.error(err)})
+
+    console.log(res)
 
     location.reload();
 }
@@ -18,18 +20,19 @@ const addBurger = async (e) =>{
 async function removeOrDevourBurger(e){
     e.preventDefault()
     const burger = {id :$(this).data("id")};
-    let devoured;
-    
-    if($(this).data("devour")){
-        burger.devoured =false
 
-        await putBurger(burger).catch((err)=>{console.error(err)})
+    if($(this).data("devour")){
+        burger.devoured = 1;
+
+        const res = await putBurger(burger).catch((err)=>{console.error(err)})
+
+        console.log("response ",res)
 
         location.reload();
     }else{
         await deleteBurger(burger).catch((err)=>{console.error(err)})
+        location.reload();
     }
-    console.log(burger)
 } 
 
 //post 
@@ -43,8 +46,9 @@ const postBurger = (burger)=>{
 
 //put 
 const putBurger = (burger)=>{
+    console.log(burger)
     return $.ajax({
-        url: "/api/burgers"+ burger.id,
+        url: "/api/burgers/"+ burger.id,
         data: burger,
         method: "PUT",
       });
@@ -53,8 +57,7 @@ const putBurger = (burger)=>{
 //delete 
 const deleteBurger = (burger)=>{
     return $.ajax({
-        url: "/api/burgers"+ burger.id,
-        data: burger,
+        url: "/api/burgers/"+ burger.id,
         method: "DELETE",
       });
 }
