@@ -2,10 +2,10 @@ const connection = require("./connection.js")
 
 
 const orm = {
-    all: tableName =>{
+    read: tableName =>{
         return connection.query("SELECT * FROM ??",tableName);
     },
-    add: addObject =>{
+    create: addObject =>{
          return connection.query(`INSERT INTO ?? SET ?`,addObject);
     },
     delete: removed=>{
