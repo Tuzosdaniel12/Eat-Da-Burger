@@ -5,12 +5,6 @@ body{
     -webkit-text-stroke: .5px red;
 }
 
-.burger-img{
-    width: 33vw;
-    height: auto;
-    margin: auto;
-}
-
 .form{
     width: 90vw;
     margin: 0 auto;
@@ -18,13 +12,33 @@ body{
     -webkit-text-stroke: .5px white;
 }
 
-@media (min-width: 576px) and (max-width: 800px) {
+@media (min-width: 500px){
+    .burger-img{
+        width: 80vw;
+        height: auto;
+        margin: auto;
+    }
+}
+@media (min-width: 576px){
+    
     .form{
         width: 50vw;
     }
   }
 
   @media (min-width: 801px){
+    .burger-img{
+        width: 50vw;
+    }
+    .form{
+        width: 33vw;
+    }
+  }
+
+  @media (min-width: 1000px){
+    .burger-img{
+        width: 33vw;
+    }
     .form{
         width: 33vw;
     }
