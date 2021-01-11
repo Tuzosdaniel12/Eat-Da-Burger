@@ -7,7 +7,9 @@ const burgers = require("../models/burgers.js")
 
 
 //html routes
-router.get('/', (req,res)=>{
+router.get('/', async (req,res)=>{
+    burgersRes = await burgers.all();
+    console.log(burgersRes)
     res.render("index")
 })
 
@@ -20,7 +22,7 @@ router.put('api/burger/:id', (req, res)=>{
 
 })
 
-router.delete('/api/burgers', (req,res)=>{
+router.delete('/api/burgers:id', (req,res)=>{
 
 })
 
