@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+    color: white;
+    
+}
+.burger-img{
+    width: 33vw;
+    height: auto;
+    margin: auto;
+}
+
+.form{
+    width: 33vw;
+}
