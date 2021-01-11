@@ -12,7 +12,6 @@ const orm = {
         return connection.query(`DELETE FROM ?? WHERE ?;`,removed)
     },
     update: updated=>{
-        console.log(updated)
         return connection.query(`UPDATE ?? SET ? WHERE ?;`,updated)
     }
 
