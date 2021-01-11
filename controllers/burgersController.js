@@ -17,9 +17,9 @@ router.get('/', async (req,res)=>{
 router.post('/api/burgers', async (req,res)=>{
     const burger = req.body
 
-    burgerRes = await burger.create(burger);
+    burgerRes = await burgers.create(burger);
 
-    res.json({ id: result.insertId })
+    res.json({ id: burgerRes.insertId })
 
 })
 
