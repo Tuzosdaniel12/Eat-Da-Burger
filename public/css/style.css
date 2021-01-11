@@ -12,5 +12,8 @@ body{
 }
 
 .form{
-    width: 33vw;
+    width: 50vw;
+    margin: 0 auto;
+    color:gray;
+    -webkit-text-stroke: .5px white;
 }
