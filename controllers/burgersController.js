@@ -43,7 +43,8 @@ router.put('/api/burgers/:id', async (req, res)=>{
 router.delete('/api/burgers/:id',async  (req,res)=>{
     const id = req.params.id
 
-    const result = await burgers.delete({id:id});
+    const result = await burgers.delete({id:id})
+        .catch((err)=>{console.error(err)});
 
     if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
