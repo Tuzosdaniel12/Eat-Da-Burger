@@ -10,7 +10,7 @@
 - [Credits](#Credits)
 - [Questions](#Questions)
 
-## Description
+## About
 
 The burger app, in this application the user can eat as many burger as they want. When the user enter the app, the user will see a text box where they can input The burger of there liking. Once they input the burger It wil appear under Eat now section. In Eat now section one can choose to devour it when ever the yare ready. After been devoured, it will appear under devoured section, where the user can remove from the list if they like too.
 
